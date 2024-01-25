@@ -35,8 +35,10 @@ class QuoteComponent extends React.Component {
   ];
       const index = Math.trunc(Math.random() * quotes.length);
       return (
-        <div className="container">
-          <h1 id='text'>{quotes[index].text}</h1>
+        <div className="container w-50 p-4 bg-secondary text-white">
+          <blockquote class="blockquote">
+            <p id='text'>{quotes[index].text}</p>
+          </blockquote>
           <p id='author'>{quotes[index].author}</p>        
           <a href='twitter.com/intent/tweet' id='tweet-quote'>
             <button type='button' className='btn btn-secondary btn-lg'id='new-quote'>Twitter</button>
