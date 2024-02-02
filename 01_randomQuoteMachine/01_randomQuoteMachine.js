@@ -27,7 +27,7 @@ const quotes = [{
       author: 'Robert Oppenheimer'
     }];
 
-class QuoteComponent extends React.Component {
+class QuotesApp extends React.Component {
     constructor(props) {
       super(props);
     }
@@ -52,4 +52,4 @@ class QuoteComponent extends React.Component {
       );
     }
   }
-  ReactDOM.render(<QuoteComponent />, document.getElementById('quote-box'));
+  ReactDOM.render(<QuotesApp />, document.getElementById('app'));
