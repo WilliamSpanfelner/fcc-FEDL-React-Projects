@@ -35,19 +35,20 @@ class QuotesApp extends React.Component {
       const index = Math.trunc(Math.random() * quotes.length);
       return (
         <div className="container w-50 p-4 bg-dark text-white">
-          <figure>
-            <blockquote class="blockquote">
-            <p id='text'>{quotes[index].text}</p>
-            </blockquote>
-            <figcaption class="blockquote-footer d-flex justify-content-end fst-italic text-white">
-              <p id='author'>{quotes[index].author}</p> 
-            </figcaption>
-          </figure>
-          <a href='twitter.com/intent/tweet' id='tweet-quote'>
-            <button type='button' className='btn btn-secondary btn-lg'id='new-quote'>Twitter</button>
-          </a>
-          <button type='button' className='btn btn-primary btn-lg'id='new-quote'>New quote</button>
-  
+          <div id="quote-box" className="px-3">
+            <figure>
+              <blockquote class="blockquote">
+              <p id='text'>{quotes[index].text}</p>
+              </blockquote>
+              <figcaption class="blockquote-footer d-flex justify-content-end fst-italic text-white">
+                <p id='author'>{quotes[index].author}</p> 
+              </figcaption>
+            </figure>
+            <a href='twitter.com/intent/tweet' id='tweet-quote'>
+              <button type='button' className='btn btn-secondary btn-lg'id='new-quote'>Twitter</button>
+            </a>
+            <button type='button' className='btn btn-primary btn-lg'id='new-quote'>New quote</button>
+          </div>
         </div>
       );
     }
