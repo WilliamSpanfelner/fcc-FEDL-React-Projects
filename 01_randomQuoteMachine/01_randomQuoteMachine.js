@@ -1,10 +1,4 @@
-class QuoteComponent extends React.Component {
-    constructor(props) {
-      super(props);
-    }
-    render() {
-      const quotes = [
-    {
+const quotes = [{
       text: '...in spite of everything, I still believe that people are really good at heart.',
       author: 'Anne Frank'
     },
@@ -31,8 +25,13 @@ class QuoteComponent extends React.Component {
     {
       text: 'It is a profound and necessary truth that the deep things in science are not found because they are useful; they are found because it was possible to find them.',
       author: 'Robert Oppenheimer'
+    }];
+
+class QuoteComponent extends React.Component {
+    constructor(props) {
+      super(props);
     }
-  ];
+    render() {
       const index = Math.trunc(Math.random() * quotes.length);
       return (
         <div className="container w-50 p-4 bg-dark text-white">
