@@ -44,9 +44,11 @@ class QuotesApp extends React.Component {
                   <p id='author'>{quotes[index].author}</p>
                 </figcaption>
             </figure>
-            <a className='btn btn-outline-dark' href='twitter.com/intent/tweet' id='tweet-quote' role="button">
-            Twitter</a>
-            <button type='button' className='btn btn-outline-dark' id='new-quote'>New quote</button>
+            <p className="d-flex justify-content-between">
+              <a className='btn btn-outline-dark' href='twitter.com/intent/tweet' id='tweet-quote' role="button" target="_blank">
+              Twitter</a>
+              <button className='btn btn-outline-dark' id='new-quote' type='button'>New quote</button>
+            </p>
           </div>
         </div>
       );
