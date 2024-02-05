@@ -35,6 +35,9 @@ class QuotesApp extends React.Component {
       };
       this.handleClick = this.handleClick.bind(this);
     }
+    componentWillMount() {
+      {this.handleClick};
+    }
     handleClick(event) {
       this.setState({
         randomIndex: Math.random()
