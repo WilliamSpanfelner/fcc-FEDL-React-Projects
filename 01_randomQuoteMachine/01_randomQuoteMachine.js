@@ -30,6 +30,15 @@ const quotes = [{
 class QuotesApp extends React.Component {
     constructor(props) {
       super(props);
+      this.state = { 
+        randomIndex: ""
+      };
+      this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick(event) {
+      this.setState({
+        randomIndex: Math.random()
+      });
     }
     render() {
       const index = Math.trunc(Math.random() * quotes.length);
