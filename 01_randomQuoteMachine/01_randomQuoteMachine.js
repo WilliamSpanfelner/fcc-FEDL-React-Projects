@@ -56,7 +56,7 @@ class QuotesApp extends React.Component {
             <p className="d-flex justify-content-between">
               <a className='btn btn-outline-dark' href='twitter.com/intent/tweet' id='tweet-quote' role="button" target="_blank">
               Twitter</a>
-              <button className='btn btn-outline-dark' id='new-quote' type='button'>New quote</button>
+              <button className='btn btn-outline-dark' id='new-quote' type='button' onClick={this.handleClick}>New quote</button>
             </p>
           </div>
         </div>
