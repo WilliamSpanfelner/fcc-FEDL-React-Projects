@@ -34,7 +34,7 @@ class QuotesApp extends React.Component {
     render() {
       const index = Math.trunc(Math.random() * quotes.length);
       return (
-        <div className="container w-50 p-4 bg-dark text-white">
+        <div className="d-flex justify-content-center align-items-center bg-success vh-100">
           <div className="row bg-light w-50" id="quote-box">
             <figure className="text-center">
                 <blockquote className="blockquote">
