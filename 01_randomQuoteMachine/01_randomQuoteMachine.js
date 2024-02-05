@@ -35,7 +35,7 @@ class QuotesApp extends React.Component {
       const index = Math.trunc(Math.random() * quotes.length);
       return (
         <div className="container w-50 p-4 bg-dark text-white">
-          <div id="quote-box" className="px-3">
+          <div className="row bg-light w-50" id="quote-box">
             <figure className="text-center">
                 <blockquote className="blockquote">
                   <p id='text'>{quotes[index].text}</p>
