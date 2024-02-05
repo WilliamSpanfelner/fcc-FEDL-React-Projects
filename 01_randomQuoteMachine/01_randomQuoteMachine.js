@@ -36,12 +36,14 @@ class QuotesApp extends React.Component {
       return (
         <div className="container w-50 p-4 bg-dark text-white">
           <div id="quote-box" className="px-3">
-            <blockquote class="blockquote">
-            <p id='text'>{quotes[index].text}</p>
-            <footer class="blockquote-footer d-flex justify-content-end fst-italic text-white">
-              <p id='author'>{quotes[index].author}</p>
-            </footer>
-            </blockquote>
+            <figure className="text-center">
+                <blockquote className="blockquote">
+                  <p id='text'>{quotes[index].text}</p>
+                </blockquote>
+                <figcaption className="blockquote-footer text-end fst-italic">
+                  <p id='author'>{quotes[index].author}</p>
+                </figcaption>
+            </figure>
             <a className='btn btn-outline-dark' href='twitter.com/intent/tweet' id='tweet-quote' role="button">
             Twitter</a>
             <button type='button' className='btn btn-outline-dark' id='new-quote'>New quote</button>
