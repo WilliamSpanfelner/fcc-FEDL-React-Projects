@@ -31,7 +31,7 @@ class QuotesApp extends React.Component {
     constructor(props) {
       super(props);
       this.state = { 
-        randomIndex: ""
+        randomNum: ""
       };
       this.handleClick = this.handleClick.bind(this);
     }
@@ -40,11 +40,11 @@ class QuotesApp extends React.Component {
     }
     handleClick(event) {
       this.setState({
-        randomIndex: Math.random()
+        randomNum: Math.random()
       });
     }
     render() {
-      const index = Math.trunc(Math.random() * quotes.length);
+      const index = Math.trunc(this.state.randomNum * quotes.length);
       return (
         <div className="d-flex justify-content-center align-items-center bg-success vh-100">
           <div className="row bg-light w-50" id="quote-box">
