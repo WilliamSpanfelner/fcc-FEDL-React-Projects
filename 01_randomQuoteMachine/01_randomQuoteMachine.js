@@ -27,6 +27,20 @@ const quotes = [{
       author: 'Robert Oppenheimer'
     }];
 
+class QuoteComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    const index = Math.trunc(this.props.random * quotes.length);
+    return(
+      <div>
+        <p>This is the quote: {quotes[index].text}</p>
+      </div>
+    );
+  }
+};
+
 class QuotesApp extends React.Component {
     constructor(props) {
       super(props);
@@ -56,6 +70,7 @@ class QuotesApp extends React.Component {
                   <p id='author'>{quotes[index].author}</p>
                 </figcaption>
             </figure>
+            <QuoteComponent randNum={this.state.randomNum} />
             <p className="d-flex justify-content-between">
               <a className='btn btn-outline-dark' href='twitter.com/intent/tweet' id='tweet-quote' role="button" target="_blank">
               Twitter</a>
