@@ -34,17 +34,14 @@ class QuoteComponent extends React.Component {
   render() {
     const index = Math.trunc(this.props.random * quotes.length);
     return(
-      <div>
-        <p>This is the quote: {quotes[index].text}</p>
-        <figure className="text-center">
-          <blockquote className="blockquote">
-            <p id='text'>{quotes[index].text}</p>
-          </blockquote>
-          <figcaption className="blockquote-footer text-end fst-italic">
-            <p id='author'>{quotes[index].author}</p>
-          </figcaption>
-        </figure>
-      </div>
+      <figure className="text-center">
+        <blockquote className="blockquote">
+          <p id='text'>{quotes[index].text}</p>
+        </blockquote>
+        <figcaption className="blockquote-footer text-end fst-italic">
+          <p id='author'>{quotes[index].author}</p>
+        </figcaption>
+      </figure>
     );
   }
 };
@@ -66,7 +63,6 @@ class QuotesApp extends React.Component {
       });
     }
     render() {
-      const index = Math.trunc(this.state.randomNum * quotes.length);
       return (
         <div className="d-flex justify-content-center align-items-center bg-success vh-100">
           <div className="row bg-light w-50" id="quote-box">
