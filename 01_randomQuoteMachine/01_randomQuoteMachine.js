@@ -36,6 +36,14 @@ class QuoteComponent extends React.Component {
     return(
       <div>
         <p>This is the quote: {quotes[index].text}</p>
+        <figure className="text-center">
+          <blockquote className="blockquote">
+            <p id='text'>{quotes[index].text}</p>
+          </blockquote>
+          <figcaption className="blockquote-footer text-end fst-italic">
+            <p id='author'>{quotes[index].author}</p>
+          </figcaption>
+        </figure>
       </div>
     );
   }
@@ -62,14 +70,7 @@ class QuotesApp extends React.Component {
       return (
         <div className="d-flex justify-content-center align-items-center bg-success vh-100">
           <div className="row bg-light w-50" id="quote-box">
-            <figure className="text-center">
-                <blockquote className="blockquote">
-                  <p id='text'>{quotes[index].text}</p>
-                </blockquote>
-                <figcaption className="blockquote-footer text-end fst-italic">
-                  <p id='author'>{quotes[index].author}</p>
-                </figcaption>
-            </figure>
+
             <QuoteComponent randNum={this.state.randomNum} />
             <p className="d-flex justify-content-between">
               <a className='btn btn-outline-dark' href='twitter.com/intent/tweet' id='tweet-quote' role="button" target="_blank">
