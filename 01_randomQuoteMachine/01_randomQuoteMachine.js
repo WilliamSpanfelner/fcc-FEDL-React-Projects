@@ -52,9 +52,11 @@ class ButtonsComponent extends React.Component {
   }
   render() {
     return(
-      <div>
-        These are the buttons.
-      </div>
+      <p className="d-flex justify-content-between">
+        <a className='btn btn-outline-dark' href='twitter.com/intent/tweet' id='tweet-quote' role="button" target="_blank">
+      Twitter</a>
+        <button className='btn btn-outline-dark' id='new-quote' type='button' onClick={this.props.handleClick}>New quote</button>
+      </p>
     );
   }
 };
@@ -81,12 +83,8 @@ class QuotesApp extends React.Component {
           <div className="row bg-light w-50" id="quote-box">
 
             <QuoteComponent randNum={this.state.randomNum} />
-            <p className="d-flex justify-content-between">
-              <a className='btn btn-outline-dark' href='twitter.com/intent/tweet' id='tweet-quote' role="button" target="_blank">
-              Twitter</a>
-              <button className='btn btn-outline-dark' id='new-quote' type='button' onClick={this.handleClick}>New quote</button>
-            </p>
-            <ButtonsComponent />
+            <ButtonsComponent handleClick={this.handleClick} />
+
           </div>
         </div>
       );
