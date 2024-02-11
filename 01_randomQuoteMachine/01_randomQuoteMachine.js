@@ -46,6 +46,19 @@ class QuoteComponent extends React.Component {
   }
 };
 
+class ButtonsComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return(
+      <div>
+        These are the buttons.
+      </div>
+    );
+  }
+};
+
 class QuotesApp extends React.Component {
     constructor(props) {
       super(props);
@@ -73,6 +86,7 @@ class QuotesApp extends React.Component {
               Twitter</a>
               <button className='btn btn-outline-dark' id='new-quote' type='button' onClick={this.handleClick}>New quote</button>
             </p>
+            <ButtonsComponent />
           </div>
         </div>
       );
