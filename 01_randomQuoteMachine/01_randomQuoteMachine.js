@@ -33,13 +33,15 @@ class QuoteComponent extends React.Component {
   }
   render() {
     const index = Math.trunc(this.props.random * quotes.length);
+    const quoteText = quotes[index].text;
+    const quoteAuthor = quotes[index].author;
     return(
       <figure className="text-center">
         <blockquote className="blockquote">
-          <p id='text'>{quotes[index].text}</p>
+          <p id='text'>{quoteText}</p>
         </blockquote>
         <figcaption className="blockquote-footer text-end fst-italic">
-          <p id='author'>{quotes[index].author}</p>
+          <p id='author'>{quoteAuthor}</p>
         </figcaption>
       </figure>
     );
