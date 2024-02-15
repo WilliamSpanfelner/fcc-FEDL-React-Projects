@@ -27,14 +27,18 @@ const quotes = [{
       author: 'Robert Oppenheimer'
     }];
 
+const shuffledQuotes = quotes.map(quote => ({sort: Math.random(), value: quote}))
+    .sort((a, b) => a.sort - b.sort)
+    .map(a => a.value);    
+
 class QuoteComponent extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
-    const index = Math.trunc(this.props.random * quotes.length);
-    const quoteText = quotes[index].text;
-    const quoteAuthor = quotes[index].author;
+    const index = Math.trunc(this.props.random * shuffledQuotes.length);
+    const quoteText = shuffledQuotes[index].text;
+    const quoteAuthor = shuffledQuotes[index].author;
     return(
       <figure className="text-center mt-2">
         <blockquote className="blockquote text-success">
