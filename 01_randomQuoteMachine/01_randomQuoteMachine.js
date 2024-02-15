@@ -36,11 +36,11 @@ class QuoteComponent extends React.Component {
     const quoteText = quotes[index].text;
     const quoteAuthor = quotes[index].author;
     return(
-      <figure className="text-center">
-        <blockquote className="blockquote">
+      <figure className="text-center mt-2">
+        <blockquote className="blockquote text-success">
           <p id='text'>{quoteText}</p>
         </blockquote>
-        <figcaption className="blockquote-footer text-end fst-italic">
+        <figcaption className="blockquote-footer text-end fst-italic mb-0">
           <p id='author'>{quoteAuthor}</p>
         </figcaption>
       </figure>
