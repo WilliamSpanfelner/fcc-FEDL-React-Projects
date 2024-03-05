@@ -4,7 +4,7 @@ class EditorComponent extends React.Component {
     }
     render() {
         return (
-            <div>Hello</div>
+            <textarea id='editor'>Hello</textarea>
         );
     }
 }
