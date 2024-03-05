@@ -5,3 +5,5 @@ class MarkdownPreviewerApp extends React.Component {
         );
     }
 }
+
+ReactDOM.render(<MarkdownPreviewerApp />, document.getElementById('app'));
