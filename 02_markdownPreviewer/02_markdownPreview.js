@@ -1,3 +1,7 @@
-class MarkdownPreviewerApp extends React.Components {
-
+class MarkdownPreviewerApp extends React.Component {
+    render() {
+        return (
+            <div>Hello</div>
+        );
+    }
 }
