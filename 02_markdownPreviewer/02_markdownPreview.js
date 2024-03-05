@@ -15,7 +15,7 @@ class PreviewComponent extends React.Component {
     }
     render() {
         return (
-            <div>World</div>
+            <div id='preview'>World</div>
         );
     }
 }
