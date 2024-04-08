@@ -26,6 +26,14 @@ class MarkdownPreviewerApp extends React.Component {
         this.state = {
             editorContent: ""
         };
+        this.handleContent = this.handleContent.bind(this);
+    }
+    handleContent() {
+        this.setState(() => {
+            return {
+                editorContent: document.getElementById("editor").value
+            };
+        });
     }
     render() {
         return (
