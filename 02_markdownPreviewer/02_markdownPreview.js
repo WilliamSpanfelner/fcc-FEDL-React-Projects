@@ -11,6 +11,7 @@ class EditorComponent extends React.Component {
                 <textarea 
                 id='editor'
                 name="editorContent"
+                onInput={this.props.handleContent}
                 placeholder="Type content to be marked down here"
                 rows={4}
                 cols={40}
@@ -49,7 +50,7 @@ class MarkdownPreviewerApp extends React.Component {
     render() {
         return (
             <div>
-                <EditorComponent />
+                <EditorComponent handleContent={this.handleContent} />
                 <PreviewComponent />
             </div>
         );
