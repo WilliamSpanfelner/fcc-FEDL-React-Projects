@@ -51,7 +51,7 @@ class MarkdownPreviewerApp extends React.Component {
         return (
             <div>
                 <EditorComponent handleContent={this.handleContent} />
-                <PreviewComponent />
+                <PreviewComponent editorContent={this.state.editorContent} />
             </div>
         );
     }
