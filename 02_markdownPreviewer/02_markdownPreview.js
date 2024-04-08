@@ -23,6 +23,9 @@ class PreviewComponent extends React.Component {
 class MarkdownPreviewerApp extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            editorContent: ""
+        };
     }
     render() {
         return (
