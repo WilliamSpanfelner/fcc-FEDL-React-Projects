@@ -4,7 +4,18 @@ class EditorComponent extends React.Component {
     }
     render() {
         return (
-            <textarea id='editor'>Hello</textarea>
+            <div>
+                <div id="editor-label">
+                    <label for="editorContent">Editor</label>
+                </div>
+                <textarea 
+                id='editor'
+                name="editorContent"
+                placeholder="Type content to be marked down here"
+                rows={4}
+                cols={40}
+                />
+            </div>
         );
     }
 }
