@@ -26,6 +26,9 @@ class PreviewComponent extends React.Component {
         super(props);
     }
     render() {
+        const createMarkup = (content) => {
+            return {__html: marked.parse(content)};
+        }
         const rawContent = this.props.editorContent;
         return (
             <div>
