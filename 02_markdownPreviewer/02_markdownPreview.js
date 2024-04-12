@@ -26,7 +26,7 @@ class PreviewComponent extends React.Component {
         super(props);
     }
     render() {
-        const createMarkup = (content) => {
+        const createMarkupFrom = (content) => {
             return {__html: marked.parse(content)};
         }
         const rawContent = this.props.editorContent;
@@ -35,7 +35,7 @@ class PreviewComponent extends React.Component {
                 <div id="preview-label">
                     <label for="preview">Preview</label>
                 </div>
-                <div id='preview'>{rawContent}</div>
+                <div id='preview'>{createMarkupFrom(rawContent)}</div>
             </div>
         );
     }
