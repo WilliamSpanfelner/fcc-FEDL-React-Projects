@@ -26,13 +26,13 @@ class PreviewComponent extends React.Component {
         super(props);
     }
     render() {
-        const content = this.props.editorContent;
+        const rawContent = this.props.editorContent;
         return (
             <div>
                 <div id="preview-label">
                     <label for="preview">Preview</label>
                 </div>
-                <div id='preview'>{content}</div>
+                <div id='preview'>{rawContent}</div>
             </div>
         );
     }
