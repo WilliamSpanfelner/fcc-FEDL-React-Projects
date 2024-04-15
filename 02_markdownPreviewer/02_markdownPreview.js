@@ -35,7 +35,9 @@ class PreviewComponent extends React.Component {
                 <div id="preview-label">
                     <label for="preview">Preview</label>
                 </div>
-                <div id='preview'>{createMarkupFrom(rawContent)}</div>
+                <div 
+                id='preview'
+                dangerouslySetInnerHTML={createMarkupFrom(rawContent)} />
             </div>
         );
     }
