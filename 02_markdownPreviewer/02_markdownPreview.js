@@ -15,7 +15,7 @@ class EditorComponent extends React.Component {
                 placeholder="Type content to be marked down here"
                 rows={4}
                 cols={40}
-                />
+                >{this.props.editorContent}</textarea>
             </div>
         );
     }
