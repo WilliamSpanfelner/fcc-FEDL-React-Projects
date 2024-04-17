@@ -27,6 +27,10 @@ class PreviewComponent extends React.Component {
     }
     render() {
         const createMarkupFrom = (content) => {
+            {/* https://marked.js.org/using_advanced#options */}
+            marked.setOptions({
+                breaks: true
+            })
             return {__html: marked.parse(content)};
         }
         const rawContent = this.props.editorContent;
