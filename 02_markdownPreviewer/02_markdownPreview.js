@@ -94,7 +94,7 @@ And here. | Okay. | I think we get it.
 ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 `
         this.state = {
-            editorContent: ""
+            editorContent: defaultText
         };
         this.handleContent = this.handleContent.bind(this);
     }
