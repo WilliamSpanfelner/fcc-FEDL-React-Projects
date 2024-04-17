@@ -1,0 +1,94 @@
+:root {
+    --silver: #999;
+    --purple: rgb(50, 0, 75);
+}
+
+* {
+    color: var(--silver);
+}
+
+body {
+    background-color: var(--purple);
+}
+
+#preview-container {
+    max-width: 40rem;
+    min-height: 5rem;
+    margin: 1.25rem;
+    box-shadow: 1px 1px 10px 2px;
+}
+
+#preview {
+    padding: 0 1rem;
+}
+
+#preview-label {
+    background-color: var(--silver);
+}
+
+#preview-label label {
+    color: var(--purple);
+}
+
+#preview h1 {
+    border-bottom: 2px solid var(--silver);
+}
+
+#preview h2 {
+    border-bottom: 1px solid var(--silver);
+}
+
+#preview pre {
+    display: block;
+    overflow: auto;
+    background-color: #050;
+}
+
+#preview code {
+    background-color: #050;
+    font-weight: bold;
+}
+
+#preview>p>code {
+    padding: 3px;
+}
+
+a {
+    color: #090;
+}
+
+#preview blockquote {
+    border-left: 2px solid var(--silver);
+    padding-left: 0.5rem;
+}
+
+#preview table {
+    border-collapse: collapse;
+    border: 2px solid var(--silver);
+}
+
+#preview th,
+#preview td {
+    border: 2px solid var(--silver);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+#preview img {
+    display: block;
+    max-width: 38rem;
+    margin: 2rem auto;
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#editor-label,
+#preview-label,
+#preview {
+    border: solid 1px var(--silver);
+}
