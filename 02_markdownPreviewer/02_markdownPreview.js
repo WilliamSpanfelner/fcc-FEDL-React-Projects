@@ -108,7 +108,7 @@ And here. | Okay. | I think we get it.
     render() {
         return (
             <div>
-                <EditorComponent handleContent={this.handleContent} />
+                <EditorComponent editorContent={this.state.editorContent} handleContent={this.handleContent} />
                 <PreviewComponent editorContent={this.state.editorContent} />
             </div>
         );
