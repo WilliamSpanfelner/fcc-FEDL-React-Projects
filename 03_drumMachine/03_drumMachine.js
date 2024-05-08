@@ -26,4 +26,15 @@ class DrumMachine extends React.Component {
     }
 }
 
+class DrumApp extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <DrumMachine />
+        );
+    }
+}
+
 ReactDOM.render(<DrumMachine />, document.getElementById("app"));
