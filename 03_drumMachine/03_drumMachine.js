@@ -21,6 +21,14 @@ class DrumMachine extends React.Component {
             <div id="drum-machine">
                 <div id="display"></div>
                 <DrumPad keyboardKey={'Q'} audioClipName={"Heater1"}/>
+                <DrumPad keyboardKey={'W'} audioClipName={"Heater2"}/>
+                <DrumPad keyboardKey={'E'} audioClipName={"Heater3"}/>
+                <DrumPad keyboardKey={'A'} audioClipName={"Heater4"}/>
+                <DrumPad keyboardKey={'S'} audioClipName={"Clap"}/>
+                <DrumPad keyboardKey={'D'} audioClipName={"Open-HH"}/>
+                <DrumPad keyboardKey={'Z'} audioClipName={"Kick-n'-Hat"}/>
+                <DrumPad keyboardKey={'X'} audioClipName={"Kick"}/>
+                <DrumPad keyboardKey={'C'} audioClipName={"Closed-HH"}/>
             </div>
         );
     }
