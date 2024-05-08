@@ -1,3 +1,16 @@
+class DrumPad extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return(
+            <button id={audioClipName} class-name="drum-pad">
+                {keyboardKey}
+            </button>
+        )
+    }
+}
+
 class DrumMachine extends React.Component {
     constructor(props) {
         super(props);
