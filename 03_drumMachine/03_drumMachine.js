@@ -3,7 +3,9 @@ class DrumPad extends React.Component {
         super(props);
     }
     render() {
-        console.log('audioClipName: ', this.props.audioClipName, 'Keyboard key: ', this.props.keyboardKey);
+        console.log('audioClipName: ', this.props.audioClipName, 
+        'Keyboard key: ', this.props.keyboardKey, 
+        'audioSrc: ', this.props.audioSrc);
         return(
             <button id={this.props.audioClipName} class-name="drum-pad">
                 {this.props.keyboardKey}
