@@ -32,7 +32,9 @@ class DrumApp extends React.Component {
     }
     render() {
         return (
-            <DrumMachine />
+            <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+                <DrumMachine />
+            </div>
         );
     }
 }
