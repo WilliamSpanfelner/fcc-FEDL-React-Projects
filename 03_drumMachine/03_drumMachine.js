@@ -23,6 +23,7 @@ class DrumMachine extends React.Component {
     handleClick(padKey) {
         const audio = document.getElementById(padKey);
         console.log("Clicked:", padKey, audio);
+        audio.play();
     }
     render() {
         const audioSrcPrefix = "https://s3.amazonaws.com/freecodecamp/drums/"
