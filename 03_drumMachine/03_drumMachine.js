@@ -29,7 +29,7 @@ class DrumMachine extends React.Component {
         return (
             <div id="drum-machine">
                 <div id="display"></div>
-                <DrumPad keyboardKey={'Q'} audioClipName={"Heater1"} audioSrc={audioSrcPrefix + "Heater-1.mp3"}/>
+                <DrumPad keyboardKey={'Q'} audioClipName={"Heater1"} audioSrc={audioSrcPrefix + "Heater-1.mp3"} onPadClick={() => this.handleClick('Q')} />
                 <DrumPad keyboardKey={'W'} audioClipName={"Heater2"} audioSrc={audioSrcPrefix + "Heater-2.mp3"}/>
                 <DrumPad keyboardKey={'E'} audioClipName={"Heater3"} audioSrc={audioSrcPrefix + "Heater-3.mp3"}/>
                 <DrumPad keyboardKey={'A'} audioClipName={"Heater4"} audioSrc={audioSrcPrefix + "Heater-4_1.mp3"}/>
