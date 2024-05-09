@@ -18,6 +18,11 @@ class DrumPad extends React.Component {
 class DrumMachine extends React.Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick(padKey) {
+        const audio = document.getElementById(padKey);
+        console.log("Clicked:", padKey, audio);
     }
     render() {
         const audioSrcPrefix = "https://s3.amazonaws.com/freecodecamp/drums/"
