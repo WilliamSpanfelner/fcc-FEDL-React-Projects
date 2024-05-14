@@ -24,6 +24,8 @@ class DrumMachine extends React.Component {
         const displayText = audio.parentElement.id;
         // Get access to the display element in order to alter its innerText property.
         const displayElement = document.getElementById('display');
+        displayElement.innerText = displayText;
+
         audio.play();
     }
     render() {
