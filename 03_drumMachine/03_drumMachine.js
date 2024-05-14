@@ -101,7 +101,9 @@ class DrumApp extends React.Component {
     render() {
         return (
             <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+                <AppHeader />
                 <DrumMachine />
+                <Signature />
             </div>
         );
     }
