@@ -25,6 +25,9 @@ class DrumMachine extends React.Component {
         // Get access to the display element in order to alter its innerText property.
         const displayElement = document.getElementById('display');
         displayElement.innerText = displayText;
+        // Update the innerText color when this method is activate to make it visible and 
+        // eliminate the appearance of the ui jumping
+        displayElement.style.color = "white";
 
         audio.play();
     }
