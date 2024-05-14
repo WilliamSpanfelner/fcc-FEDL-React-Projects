@@ -3,9 +3,6 @@ class DrumPad extends React.Component {
         super(props);
     }
     render() {
-        console.log('audioClipName: ', this.props.audioClipName, 
-        'Keyboard key: ', this.props.keyboardKey, 
-        'audioSrc: ', this.props.audioSrc);
         return(
             <button id={this.props.audioClipName} class-name="drum-pad" onClick={this.props.onPadClick}>
                 <audio className="clip" id={this.props.keyboardKey} src={this.props.audioSrc}></audio>
@@ -38,7 +35,7 @@ class DrumMachine extends React.Component {
                 <DrumPad keyboardKey={'D'} audioClipName={"Open-HH"} audioSrc={audioSrcPrefix + "Dsc_Oh.mp3"} onPadClick={() => this.handleClick('D')} />
                 <DrumPad keyboardKey={'Z'} audioClipName={"Kick-n'-Hat"} audioSrc={audioSrcPrefix + "Kick_n_Hat.mp3"} onPadClick={() => this.handleClick('Z')} />
                 <DrumPad keyboardKey={'X'} audioClipName={"Kick"} audioSrc={audioSrcPrefix + "RP4_KICK_1.mp3"} onPadClick={() => this.handleClick('X')} />
-                <DrumPad keyboardKey={'C'} audioClipName={"Closed-HH"}audioSrc={audioSrcPrefix + "Cev_H2.mp3"} onPadClick={() => this.handleClick('C')} />
+                <DrumPad keyboardKey={'C'} audioClipName={"Closed-HH"} audioSrc={audioSrcPrefix + "Cev_H2.mp3"} onPadClick={() => this.handleClick('C')} />
             </div>
         );
     }
