@@ -22,6 +22,8 @@ class DrumMachine extends React.Component {
         console.log("Clicked:", padKey, audio);
         // Get access to the clip name which is the id of the parent element of the audio element 
         const displayText = audio.parentElement.id;
+        // Get access to the display element in order to alter its innerText property.
+        const displayElement = document.getElementById('display');
         audio.play();
     }
     render() {
