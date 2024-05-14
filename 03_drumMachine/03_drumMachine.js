@@ -1,3 +1,19 @@
+class AppHeader extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return(
+            <header className="d-flex flex-column align-items-center">
+                <a href="https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-drum-machine" target="_blank">
+                    <img src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="freeCodeCamp logo image" />
+                </a>
+                <div className="app-title">Drum Machine</div>
+            </header>
+        );
+    }
+}
+
 class DrumPad extends React.Component {
     constructor(props) {
         super(props);
@@ -11,7 +27,6 @@ class DrumPad extends React.Component {
         )
     }
 }
-
 class DrumMachine extends React.Component {
     constructor(props) {
         super(props);
