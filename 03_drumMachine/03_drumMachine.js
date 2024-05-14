@@ -20,6 +20,8 @@ class DrumMachine extends React.Component {
     handleClick(padKey) {
         const audio = document.getElementById(padKey);
         console.log("Clicked:", padKey, audio);
+        // Get access to the clip name which is the id of the parent element of the audio element 
+        const displayText = audio.parentElement.id;
         audio.play();
     }
     render() {
