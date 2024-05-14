@@ -31,7 +31,12 @@ class DrumMachine extends React.Component {
     render() {
         const audioSrcPrefix = "https://s3.amazonaws.com/freecodecamp/drums/"
         return (
-            <div id="drum-machine">
+            <div 
+            id="drum-machine"
+            onKeyDown = {e => {
+                // This will listen for keydown events
+            }}
+            >
                 <div id="display"></div>
                 <DrumPad keyboardKey={'Q'} audioClipName={"Heater1"} audioSrc={audioSrcPrefix + "Heater-1.mp3"} onPadClick={() => this.handleClick('Q')} />
                 <DrumPad keyboardKey={'W'} audioClipName={"Heater2"} audioSrc={audioSrcPrefix + "Heater-2.mp3"} onPadClick={() => this.handleClick('W')} />
