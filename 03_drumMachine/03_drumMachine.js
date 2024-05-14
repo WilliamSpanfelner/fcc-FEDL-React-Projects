@@ -14,6 +14,17 @@ class AppHeader extends React.Component {
     }
 }
 
+class Signature extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return(
+        <p className="d-flex justify-content-center signature">Designed & Coded by <a href="https://www.freecodecamp.org/wil-1-am" target="_blank"> William</a></p>
+      );
+    }
+}
+
 class DrumPad extends React.Component {
     constructor(props) {
         super(props);
