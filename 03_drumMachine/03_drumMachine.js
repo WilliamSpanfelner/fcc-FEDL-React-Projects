@@ -36,6 +36,7 @@ class DrumMachine extends React.Component {
             onKeyDown = {e => {
                 // This will listen for keydown events and compare the key values to a valid key list
                 const validKeys = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
+                const keyTapped = e.key.toUpperCase();
 
             }}
             >
