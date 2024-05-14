@@ -34,7 +34,9 @@ class DrumMachine extends React.Component {
             <div 
             id="drum-machine"
             onKeyDown = {e => {
-                // This will listen for keydown events
+                // This will listen for keydown events and compare the key values to a valid key list
+                const validKeys = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
+
             }}
             >
                 <div id="display"></div>
