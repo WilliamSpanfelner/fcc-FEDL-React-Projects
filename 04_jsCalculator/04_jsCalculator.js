@@ -1,3 +1,16 @@
+class CalcDisplay extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return(
+            <div>
+                <textarea id="display">This is the display</textarea>
+            </div>
+        );
+    }
+}
+
 class CalcButtons extends React.Component {
     constructor(props) {
         super(props);
@@ -24,6 +37,7 @@ class AppName extends React.Component {
     render() {
         return (
             <div>
+                <CalcDisplay />
                 <CalcButtons />
             </div>
         )
