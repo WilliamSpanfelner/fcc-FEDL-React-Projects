@@ -3,8 +3,10 @@ class CalcButtons extends React.Component {
         super(props);
     }
     render() {
+        const buttons = [{id: "equals", label: "="}, {id: "zero", label: "0"}];
+        
         return(
-            
+
         );
     }
 }
