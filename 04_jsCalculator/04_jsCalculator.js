@@ -5,8 +5,14 @@ class CalcButtons extends React.Component {
     render() {
         const buttons = [{id: "equals", label: "="}, {id: "zero", label: "0"}];
         
+        // https://react.dev/learn#rendering-lists
+        const renderButtons = buttons.map(button =>
+            <button key={button.id} id={button.id} >
+                {button.label}
+            </button>
+        );
         return(
-
+            <div>{renderButtons}</div>
         );
     }
 }
