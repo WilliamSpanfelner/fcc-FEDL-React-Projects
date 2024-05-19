@@ -38,6 +38,16 @@ class Calculator extends React.Component {
             output: ''
         };
     }
+    componentWillMoutnt() {
+        const defaultText = '0';
+        this.setState(() => {
+            return {
+                input: '0',
+                output: ''
+            }
+        });
+        console.log("Initializing display");
+    }
     render() {
         return (
             <div>
