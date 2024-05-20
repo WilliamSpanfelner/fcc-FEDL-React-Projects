@@ -48,12 +48,14 @@ class Calculator extends React.Component {
     }
     clearDisplay() {
         console.log("Display will be cleared!");
+        this.componentWillMount();
+        document.getElementById("display").value = this.state.input;
     }
     render() {
         return (
             <div>
                 <CalcDisplay input={this.state.input} />
-                <CalcButtons />
+                <CalcButtons clear={this.clearDisplay} />
             </div>
         )
     }
