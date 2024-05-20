@@ -38,12 +38,11 @@ class Calculator extends React.Component {
             output: ''
         };
     }
-    componentWillMoutnt() {
-        const defaultText = '0';
+    componentWillMount() {
         this.setState(() => {
             return {
                 input: '0',
-                output: ''
+                output: '0'
             }
         });
         console.log("Initializing display");
@@ -51,7 +50,7 @@ class Calculator extends React.Component {
     render() {
         return (
             <div>
-                <CalcDisplay />
+                <CalcDisplay input={this.state.input} />
                 <CalcButtons />
             </div>
         )
