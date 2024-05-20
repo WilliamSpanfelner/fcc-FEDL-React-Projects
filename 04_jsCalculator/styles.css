@@ -11,3 +11,10 @@ button {
     font-weight: bold;
     font-size: 1.75rem;
 }
+
+input {
+    background-color: transparent;
+    color: snow;
+    font-size: 2rem;
+    text-align: right;
+  }
