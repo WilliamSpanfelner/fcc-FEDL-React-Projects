@@ -35,6 +35,7 @@ class Calculator extends React.Component {
             input: '',
             output: ''
         };
+        this.clearDisplay = this.clearDisplay.bind(this);
     }
     componentWillMount() {
         this.setState(() => {
@@ -44,6 +45,9 @@ class Calculator extends React.Component {
             }
         });
         console.log("Initializing display");
+    }
+    clearDisplay() {
+        console.log("Display will be cleared!");
     }
     render() {
         return (
