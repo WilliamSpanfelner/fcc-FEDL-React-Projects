@@ -4,9 +4,7 @@ class CalcDisplay extends React.Component {
     }
     render() {
         return(
-            <div>
-                <textarea id="display">This is the display</textarea>
-            </div>
+            <input id="display" value={this.props.input} />
         );
     }
 }
