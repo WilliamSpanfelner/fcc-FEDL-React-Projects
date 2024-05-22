@@ -53,19 +53,14 @@ class Calculator extends React.Component {
         document.getElementById("display").value = this.state.input;
     }
     buttonAction(e) {
-        const onKeyTapped = e.target.innerText;
-        switch (onKeyTapped) {
+        const onKeyTap = e.target.innerText;
+        switch (onKeyTap) {
             case 'C':
                 this.clearDisplay();
                 break;
         
             default:
                 console.log(`You clicked the ${e.target.id} number button`);
-        }
-        if (e.target.innerText == '1') {
-            console.log(`You clicked the ${e.target.id} number button`);
-        } else if (e.target.innerText == 'C') {
-            this.clearDisplay();
         }
     }
     render() {
