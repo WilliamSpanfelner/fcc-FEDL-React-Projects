@@ -60,8 +60,15 @@ class Calculator extends React.Component {
                 break;
         
             default:
-                console.log(`You clicked the ${e.target.id} number button`);
+                // Replace 0 with first keyTap value or simply add to existing string.
+                const updatedInput = this.state.input != '0' ? this.state.input + onKeyTap : onKeyTap;
+                this.setState(()=> {
+                    return {
+                        input: updatedInput,
+                    }
+                });
         }
+        console.log(`You clicked the ${e.target.id} number button`);
     }
     render() {
         return (
