@@ -36,6 +36,7 @@ class Calculator extends React.Component {
             output: ''
         };
         this.clearDisplay = this.clearDisplay.bind(this);
+        this.buttonAction = this.buttonAction.bind(this);
     }
     componentWillMount() {
         this.setState(() => {
@@ -51,11 +52,12 @@ class Calculator extends React.Component {
         this.componentWillMount();
         document.getElementById("display").value = this.state.input;
     }
+    buttonAction() {}
     render() {
         return (
             <div>
                 <CalcDisplay input={this.state.input} />
-                <CalcButtons clear={this.clearDisplay} />
+                <CalcButtons execute={this.buttonAction} />
             </div>
         )
     }
