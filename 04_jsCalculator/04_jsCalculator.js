@@ -52,7 +52,13 @@ class Calculator extends React.Component {
         this.componentWillMount();
         document.getElementById("display").value = this.state.input;
     }
-    buttonAction() {}
+    buttonAction(e) {
+        if (e.target.innerText == '1') {
+            console.log(`You clicked the ${e.target.id} number button`);
+        } else if (e.target.innerText == 'C') {
+            this.clearDisplay();
+        }
+    }
     render() {
         return (
             <div>
