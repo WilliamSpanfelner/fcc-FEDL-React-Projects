@@ -35,7 +35,7 @@ class Calculator extends React.Component {
             input: '',
             output: ''
         };
-        this.clearDisplay = this.clearDisplay.bind(this);
+        // this.clearDisplay = this.clearDisplay.bind(this);
         this.buttonAction = this.buttonAction.bind(this);
     }
     componentWillMount() {
@@ -53,6 +53,15 @@ class Calculator extends React.Component {
         document.getElementById("display").value = this.state.input;
     }
     buttonAction(e) {
+        const onKeyTapped = e.target.innerText;
+        switch (onKeyTapped) {
+            case 'C':
+                this.clearDisplay();
+                break;
+        
+            default:
+                console.log(`You clicked the ${e.target.id} number button`);
+        }
         if (e.target.innerText == '1') {
             console.log(`You clicked the ${e.target.id} number button`);
         } else if (e.target.innerText == 'C') {
