@@ -53,12 +53,17 @@ class Calculator extends React.Component {
         this.componentWillMount();
     }
     buttonAction(e) {
-        const onKeyTap = e.target.innerText;
-        switch (onKeyTap) {
-            case 'C':
+        const keyTapped = e.target;
+        switch (keyTapped.id) {
+            case 'clear':
                 this.clearDisplay();
                 break;
-        
+            case 'equals':
+                this.saveOperand(keyTapped);
+                break;
+            case 'add':
+                this.saveOperand(keyTapped);
+                break;
             default:
                 // Replace 0 with first keyTap value or simply add to existing string.
                 const updatedInput = this.state.input != '0' ? this.state.input + onKeyTap : onKeyTap;
