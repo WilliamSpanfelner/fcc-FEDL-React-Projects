@@ -4,7 +4,7 @@ class CalcDisplay extends React.Component {
     }
     render() {
         return(
-            <input id="display" value={this.props.input} />
+            <input id="display" value={this.props.output ? this.props.output : this.props.input} />
         );
     }
 }
