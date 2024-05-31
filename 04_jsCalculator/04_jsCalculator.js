@@ -114,7 +114,7 @@ class Calculator extends React.Component {
     render() {
         return (
             <div>
-                <CalcDisplay input={this.state.input} />
+                <CalcDisplay input={this.state.input} output={this.state.output} />
                 <CalcButtons execute={this.buttonAction} />
             </div>
         )
