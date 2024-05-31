@@ -52,6 +52,29 @@ class Calculator extends React.Component {
     clearDisplay() {
         this.componentWillMount();
     }
+    // buildOperand will take the keyTapped and progressively build a string representing a number to be saved as an operand in state.
+    buildOperand(keyTapped) {
+        this.setState(prevState => {
+            const numberInConstruction = String(prevState.input);
+            if (numberInConstruction === '0' && Number(keyTapped.innerText) > 0) {
+                return {
+                    input: keyTapped.innerText,
+                }
+            }
+            if (numberInConstruction.includes(".") && keyTapped.innerText === ".") {
+                return;
+            } else if (keyTapped.label === ".") {
+                const newNumber = numberInConstruction + keyTapped.label;
+                return {
+                    input: newNumber,
+                }
+            } else {
+                return {
+                    input: prevState.input + keyTapped.innerText,
+                }
+            }
+        })
+    }
     buttonAction(e) {
         const keyTapped = e.target;
         switch (keyTapped.id) {
