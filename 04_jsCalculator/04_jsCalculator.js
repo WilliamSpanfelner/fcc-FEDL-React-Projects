@@ -55,23 +55,19 @@ class Calculator extends React.Component {
     // buildOperand will take the keyTapped and progressively build a string representing a number to be saved as an operand in state.
     buildOperand(keyTapped) {
         this.setState(prevState => {
-            const numberInConstruction = String(prevState.input);
+            const numberInConstruction = prevState.input;
             if (numberInConstruction === '0' && Number(keyTapped.innerText) > 0) {
                 return {
                     input: keyTapped.innerText,
                 }
             }
+            // if there is already a decimal and the decimal is tapped again return early to prevent multiple decimal chars
             if (numberInConstruction.includes(".") && keyTapped.innerText === ".") {
                 return;
-            } else if (keyTapped.label === ".") {
-                const newNumber = numberInConstruction + keyTapped.label;
-                return {
-                    input: newNumber,
-                }
-            } else {
-                return {
-                    input: prevState.input + keyTapped.innerText,
-                }
+            }
+            //  otherwise concatenate the keyTapped value to the end of the string
+            return {
+                input: prevState.input + keyTapped.innerText,
             }
         })
     }
