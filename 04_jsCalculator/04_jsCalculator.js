@@ -44,15 +44,13 @@ class Calculator extends React.Component {
         this.setState(() => {
             return {
                 input: '0',
-                output: '0'
+                output: ''
             }
         });
         console.log("Initializing display");
     }
     clearDisplay() {
-        console.log("Display will be cleared!");
         this.componentWillMount();
-        document.getElementById("display").value = this.state.input;
     }
     buttonAction(e) {
         const onKeyTap = e.target.innerText;
