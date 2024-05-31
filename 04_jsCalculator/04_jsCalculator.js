@@ -32,7 +32,10 @@ class Calculator extends React.Component {
         super(props);
         this.state = {
             input: '',
-            output: ''
+            output: '',
+            operation: '',
+            operand1: '',
+            operand2: '',
         };
         // this.clearDisplay = this.clearDisplay.bind(this);
         this.buttonAction = this.buttonAction.bind(this);
