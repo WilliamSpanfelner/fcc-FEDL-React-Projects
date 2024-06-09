@@ -4,7 +4,10 @@ class CalcDisplay extends React.Component {
     }
     render() {
         return(
-            <input id="display" value={this.props.output ? this.props.output : this.props.input} />
+            <div>
+                <input id="display" value={this.props.output ? this.props.output : this.props.input} />
+                {this.props.expression}
+            </div>
         );
     }
 }
@@ -122,7 +125,7 @@ class Calculator extends React.Component {
         console.log(this.state);
         return (
             <div>
-                <CalcDisplay input={this.state.input} output={this.state.output} />
+                <CalcDisplay input={this.state.input} output={this.state.output} expression={this.state.expression} />
                 <CalcButtons execute={this.buttonAction} />
             </div>
         )
