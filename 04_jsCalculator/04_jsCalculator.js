@@ -39,6 +39,9 @@ class Calculator extends React.Component {
         };
         this.calculate = {
             add: (x, y) => x + y,
+            subtract: (x, y) => x - y,
+            multiply: (x, y) => x * y,
+            divide: (x, y) => x / y,
         }
         // this.clearDisplay = this.clearDisplay.bind(this);
         this.buttonAction = this.buttonAction.bind(this);
