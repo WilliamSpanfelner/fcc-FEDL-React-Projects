@@ -15,7 +15,25 @@ class CalcDisplay extends React.Component {
 class CalcButtons extends React.Component {
     constructor(props) {
         super(props);
-        this.buttons = [{id: "equals", label: "="}, {id: "zero", label: "0"}, {id: "one", label: "1"}, {id: "two", label: "2"}, {id: "three", label: "3"}, {id: "four", label: "4"}, {id: "five", label: "5"}, {id: "six", label: "6"}, {id: "seven", label: "7"}, {id: "eight", label: "8"}, {id: "nine", label: "9"}, {id: "add", label: "＋"}, {id: "subtract", label: "－"}, {id: "multiply", label: "×"}, {id: "divide", label: "÷"}, {id: "decimal", label: "."}, {id: "clear", label: "C"},];
+        this.buttons = [
+            {id: "equals", label: "=", class: "operation"}, 
+            {id: "zero", label: "0"}, 
+            {id: "one", label: "1"}, 
+            {id: "two", label: "2"}, 
+            {id: "three", label: "3"}, 
+            {id: "four", label: "4"}, 
+            {id: "five", label: "5"}, 
+            {id: "six", label: "6"}, 
+            {id: "seven", label: "7"}, 
+            {id: "eight", label: "8"}, 
+            {id: "nine", label: "9"}, 
+            {id: "add", label: "＋", class: "operation"}, 
+            {id: "subtract", label: "－", class: "operation"}, 
+            {id: "multiply", label: "×", class: "operation"}, 
+            {id: "divide", label: "÷", class: "operation"}, 
+            {id: "decimal", label: "."}, 
+            {id: "clear", label: "C"},
+        ];
     }
     render() {
         // https://react.dev/learn#rendering-lists
