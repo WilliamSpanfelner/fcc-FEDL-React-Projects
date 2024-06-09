@@ -130,10 +130,11 @@ class Calculator extends React.Component {
             case 'clear':
                 this.clearDisplay();
                 break;
-            case 'equals':
-                this.saveOperand(keyTapped);
-                break;
             case 'add':
+            case 'subtract':
+            case 'multiply':
+            case 'divide':
+            case 'equals':
                 this.saveOperand(keyTapped);
                 break;
             default:
