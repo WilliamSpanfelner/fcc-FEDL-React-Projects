@@ -44,16 +44,20 @@ class Calculator extends React.Component {
         this.buttonAction = this.buttonAction.bind(this);
     }
     componentWillMount() {
+        this.clearDisplay();
+    }
+    clearDisplay() {
         this.setState(() => {
             return {
                 input: '0',
-                output: ''
+                output: '', 
+                operation: '',
+                operand1: '',
+                operand2: '',
+                expression: '',
             }
         });
         console.log("Initializing display");
-    }
-    clearDisplay() {
-        this.componentWillMount();
     }
     // buildOperand will take the keyTapped and progressively build a string representing a number to be saved as an operand in state.
     buildOperand(keyTapped) {
@@ -112,6 +116,7 @@ class Calculator extends React.Component {
         console.log(`You clicked the ${e.target.id} number button`);
     }
     render() {
+        console.log(this.state);
         return (
             <div>
                 <CalcDisplay input={this.state.input} output={this.state.output} />
