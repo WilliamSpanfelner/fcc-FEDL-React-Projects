@@ -37,7 +37,9 @@ class CalcButtons extends React.Component {
     }
     render() {
         // https://react.dev/learn#rendering-lists
-        const renderKeypad = buttons.map(button =>
+        //TODO: Decide whether a class is really needs for "operations"
+
+        const renderKeypad = this.buttons.map(button =>
             <button key={button.id} id={button.id} onClick={this.props.execute}>
                 {button.label}
             </button>
