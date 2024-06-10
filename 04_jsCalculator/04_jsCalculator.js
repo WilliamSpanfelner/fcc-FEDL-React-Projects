@@ -93,13 +93,16 @@ class Calculator extends React.Component {
                     input: numberKey.innerText,
                     expression: prevState.expression + numberKey.innerText,
                 }
-            } else if (prevState.input === '0' && Number(numberKey.innerText) === 0) {
+            } else if ((prevState.input === '0' && Number(numberKey.innerText) === 0) || 
+            (prevState.input.includes(".") && numberKey.innerText === ".")) {
+                // If there is already a zero and the zero is tapped again return early to prevent multiple leading zeroes
+                // if there is already a decimal and the decimal is tapped again return early to prevent multiple decimal chars
                 return;
             }
-            // if there is already a decimal and the decimal is tapped again return early to prevent multiple decimal chars
-            if (prevState.input.includes(".") && numberKey.innerText === ".") {
-                return;
-            }
+            
+            // if (prevState.input.includes(".") && numberKey.innerText === ".") {
+            //     return;
+            // }
             //  otherwise concatenate the keyTapped value to the end of the string
             return {
                 input: prevState.input + numberKey.innerText,
