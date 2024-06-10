@@ -99,11 +99,6 @@ class Calculator extends React.Component {
                 // if there is already a decimal and the decimal is tapped again return early to prevent multiple decimal chars
                 return;
             }
-            
-            // if (prevState.input.includes(".") && numberKey.innerText === ".") {
-            //     return;
-            // }
-            //  otherwise concatenate the keyTapped value to the end of the string
             return {
                 input: prevState.input + numberKey.innerText,
                 expression: prevState.expression + numberKey.innerText,
