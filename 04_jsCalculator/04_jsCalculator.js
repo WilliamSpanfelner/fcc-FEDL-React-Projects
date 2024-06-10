@@ -109,12 +109,13 @@ class Calculator extends React.Component {
     // saveOperand will set state based on desired operation and operands available
     saveOperand(operator) {
         this.setState(prevState => {
-            const updateOperand = Number(this.state.input);
+            const updateOperand = this.state.input;
             if (prevState.operation && prevState.operand1 && operator.id === 'equals') {
+                const result = this.calculate[`${prevState.operation}`](Number(prevState.operand1), Number(updateOperand));
                 return {
-                    output: this.calculate[`${prevState.operation}`](Number(prevState.operand1), Number(updateOperand)),
+                    output: result,
                     operand2: updateOperand,
-                    expression: prevState.expression + operator.innerText,
+                    expression: prevState.expression + operator.innerText + result,
                 }
             }
             return {
