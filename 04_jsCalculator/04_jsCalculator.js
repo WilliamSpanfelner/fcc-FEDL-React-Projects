@@ -89,7 +89,7 @@ class Calculator extends React.Component {
     buildOperand(numberKey) {
         this.setState(prevState => {
             const numberInConstruction = prevState.input;
-            if (numberInConstruction === '0' && numberKey.innerText > 0) {
+            if (numberInConstruction === '0' && Number(numberKey.innerText) > 0) {
                 return {
                     input: numberKey.innerText,
                     expression: prevState.expression + numberKey.innerText,
