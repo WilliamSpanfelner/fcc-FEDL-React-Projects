@@ -45,9 +45,7 @@ class CalcButtons extends React.Component {
                 {button.label}
             </button>
         );
-        return(
-            <div>{renderKeypad}</div>
-        );
+        return <div>{renderKeypad}</div>;
     }
 }
 
