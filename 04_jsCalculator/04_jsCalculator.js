@@ -4,7 +4,8 @@ class CalcDisplay extends React.Component {
     }
     render() {
         return(
-            <div>
+            <div> 
+            {/* TODO Create label element for input */}
                 <input id="display" value={this.props.output ? this.props.output : this.props.input} />
                 {this.props.expression}
             </div>
@@ -85,7 +86,7 @@ class Calculator extends React.Component {
         });
         console.log("Initializing display");
     }
-    // buildOperand will take the keyTapped and progressively build a string representing a number to be saved as an operand in state.
+    // buildOperand takes the keyTapped and progressively build a string representing a number to be saved as an operand in state.
     buildOperand(numberKey) {
         this.setState(prevState => {
             if (prevState.input === '0' && Number(numberKey.innerText) > 0) {
@@ -105,7 +106,7 @@ class Calculator extends React.Component {
             }
         })
     }
-    // saveOperand will set state based on desired operation and operands available
+    // saveOperand sets state based on desired operation and operands available
     saveOperand(operator) {
         this.setState(prevState => {
             const updateOperand = this.state.input;
