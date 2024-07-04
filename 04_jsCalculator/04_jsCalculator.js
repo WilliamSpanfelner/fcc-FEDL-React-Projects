@@ -88,19 +88,60 @@ class Calculator extends React.Component {
     // buildOperand takes the keyTapped and progressively build a string representing a number to be saved as an operand in state.
     buildOperand(numberKey) {
         this.setState(prevState => {
-            if (prevState.input === '0' && Number(numberKey.innerText) > 0) {
-            const valueEnteredNow = Number(numberKey.innerText);
-            const priorInputValue = Number(prevState.input);
+            if (numberKey.innerText === ".") {          // if a decimal is entered
+                if (prevState.input.includes(".")) {    // if decimal already exists in input 
+                    return;                             // return early
+                } else if (prevState.input === "0") {   // if a zero was previous value i.e. "0."
+                    return {
+                        input: prevState.input + numberKey.innerText,   // = "0."
+                        expression: prevState.expression + prevState.input + numberKey.innerText,  // = whatever the expression was + "0."
+                    };
+                } else {
+                    return {  // this is same as the case above except for expression value
+                        input: prevState.input + numberKey.innerText,
+                        expression: prevState.expression + numberKey.innerText,
+                    };
+                }
+            } else if (prevState.input === "0" && numberKey.innerText === "0") { // Prevent multiple leading zeroes
+                return;  // return early;
+            } else if (prevState.input === "0" && numberKey.innerText != "0") {  // Remove leading zero for numbers > 0
                 return {
                     input: numberKey.innerText,
                     expression: prevState.expression + numberKey.innerText,
-                }
-            } else if ((prevState.input === '0' && Number(numberKey.innerText) === 0) || 
+                };
+            } else {  // in any other case proceed to add value to input and expression
+                return {  
+                    input: prevState.input + numberKey.innerText,
+                    expression: prevState.expression + numberKey.innerText, 
+                };
+            }
+        });
+    }
+    
+    oldBuildOperand(numberKey) {
+        this.setState(prevState => {
+            // const valueEnteredNow = Number(numberKey.innerText);
+            // const priorInputValue = Number(prevState.input);
+            // if an operation has already been entered with operands
+            // if (prevState.operand2 && prevState.operand1 && prevState.operation) {
+                
+            // }
+            // Disallow leading zeroes and > 1 decimal.
+            if ((prevState.input === '0' && Number(numberKey.innerText) === 0) || 
             (prevState.input.includes(".") && numberKey.innerText === ".")) {
                 // If there is already a zero and the zero is tapped again return early to prevent multiple leading zeroes
                 // if there is already a decimal and the decimal is tapped again return early to prevent multiple decimal chars
                 return;
             }
+
+            if (priorInputValue === 0 && !valueEnteredNow.isNaN) {
+                console.log(`Will replace leading zero ${numberKey.innerText} Number to display: ${valueEnteredNow}` );
+                return {
+                    input: valueEnteredNow,
+                    expression: prevState.expression + numberKey.innerText,
+                };
+            }
+            
             return {
                 input: prevState.input + numberKey.innerText,
                 expression: prevState.expression + numberKey.innerText,
@@ -111,6 +152,9 @@ class Calculator extends React.Component {
     saveOperand(operator) {
         this.setState(prevState => {
             const updateOperand = this.state.input;
+            if (operator.id === 'subtract' && prevState.operation) {
+                console.log("The number that follows will be negative");
+            }
             if (prevState.operation && prevState.operand1 && operator.id === 'equals') {
                 const result = this.calculate[`${prevState.operation}`](Number(prevState.operand1), Number(updateOperand));
                 return {
