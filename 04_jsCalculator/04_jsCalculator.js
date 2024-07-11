@@ -65,6 +65,7 @@ class Calculator extends React.Component {
             multiply: (x, y) => x * y,
             divide: (x, y) => x / y,
         }
+        this.operators = ["+", "-", "x", "÷", "="];
         this.isNegative = false;
         // this.clearDisplay = this.clearDisplay.bind(this);
         this.buttonAction = this.buttonAction.bind(this);
