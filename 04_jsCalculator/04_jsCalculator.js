@@ -110,20 +110,20 @@ class Calculator extends React.Component {
             if (numberKey.innerText === ".") {          // if a decimal is entered
                 if (prevState.input.includes(".")) {    // if decimal already exists in input 
                     return;                             // return early
-                } else 
-                if (prevState.input === "0") {   // if a zero was previous value i.e. "0."
+                } else if (prevState.input === "0") {   // if a zero was previous value i.e. "0."
                     return {
                         input: prevState.input + numberKey.innerText,   // = "0."
                         expression: prevState.expression + prevState.input + numberKey.innerText,  // = whatever the expression was + "0."
                     };
-                } else 
-                {
+                } else {
                     return {  // this is same as the case above except for expression value
                         input: prevState.input + numberKey.innerText,
                         expression: prevState.expression + numberKey.innerText,
                     };
                 }
-            } else if (prevState.input === "0" && numberKey.innerText === "0") { // Prevent multiple leading zeroes
+            } 
+            
+            if (prevState.input === "0" && numberKey.innerText === "0") { // Prevent multiple leading zeroes
                 return;  // return early;
             } else if (prevState.input === "0" && numberKey.innerText != "0") {  // Remove leading zero for numbers > 0
                 return {
