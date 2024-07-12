@@ -123,19 +123,21 @@ class Calculator extends React.Component {
                 }
             } 
             
-            if (prevState.input === "0" && numberKey.innerText === "0") { // Prevent multiple leading zeroes
+            if (numberKey.innerText === "0" && prevState.input === "0") { // Prevent multiple leading zeroes
                 return;  // return early;
-            } else if (prevState.input === "0" && numberKey.innerText != "0") {  // Remove leading zero for numbers > 0
+            }
+            
+            if (prevState.input === "0" && numberKey.innerText != "0") {  // Remove leading zero for numbers > 0
                 return {
                     input: numberKey.innerText,
                     expression: prevState.expression + numberKey.innerText,
                 };
-            } else {  // in any other case proceed to add value to input and expression
-                return {  
-                    input: prevState.input + numberKey.innerText,
-                    expression: prevState.expression + numberKey.innerText, 
-                };
-            }
+            }  
+            
+            return {  // in any other case proceed to add value to input and expression
+                input: prevState.input + numberKey.innerText,
+                expression: prevState.expression + numberKey.innerText, 
+            };
         });
     }
     
