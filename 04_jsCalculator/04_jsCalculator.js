@@ -92,10 +92,17 @@ class Calculator extends React.Component {
 
             // Check if last character in expression is an operator, if so, 
             // this means that the input value should be replaced by the value just entered
-            const lastKeystroke = prevState.expression.slice(-1);
-            if (this.operators.includes(lastKeystroke)) {
+            const lastExpressionCharIsOperator = this.operators.includes(prevState.expression.slice(-1));
+            if (numberKey.innerText === "." && lastExpressionCharIsOperator) {
                 return {
                     input: "0" + numberKey.innerText,
+                    expression: prevState.expression + "0" + numberKey.innerText,
+                }
+            }
+            
+            if (lastExpressionCharIsOperator) {
+                return {
+                    input: numberKey.innerText,
                     expression: prevState.expression + numberKey.innerText,
                 }
             }
@@ -103,12 +110,14 @@ class Calculator extends React.Component {
             if (numberKey.innerText === ".") {          // if a decimal is entered
                 if (prevState.input.includes(".")) {    // if decimal already exists in input 
                     return;                             // return early
-                } else if (prevState.input === "0") {   // if a zero was previous value i.e. "0."
+                } else 
+                if (prevState.input === "0") {   // if a zero was previous value i.e. "0."
                     return {
                         input: prevState.input + numberKey.innerText,   // = "0."
                         expression: prevState.expression + prevState.input + numberKey.innerText,  // = whatever the expression was + "0."
                     };
-                } else {
+                } else 
+                {
                     return {  // this is same as the case above except for expression value
                         input: prevState.input + numberKey.innerText,
                         expression: prevState.expression + numberKey.innerText,
